@@ -1,0 +1,12 @@
+/* Add here all your CSS customizations */
+
+.footer {
+    position: absolute;
+    left: 75px;
+    bottom: 10px;
+    width: 89%;
+    color: #1405f1;
+    text-align: center;
+    /* background: #171717; */
+    padding: 0;
+}
