@@ -82,7 +82,7 @@
 							<ol class="breadcrumbs">
 								<li>
 									<a href="">
-										<i class="fa fa-home">dfghjfdfghjhgfdfghj</i>
+										<i class="fa fa-home"></i>
 									</a>
 								</li>
 								

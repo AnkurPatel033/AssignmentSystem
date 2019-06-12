@@ -41,7 +41,7 @@
 
 <!-- Head Libs -->
 <script src="assets/vendor/modernizr/modernizr.js"></script>
-<script src="assets/javascripts/forms/assignis.js"></script>
+<!-- <script src="assets/javascripts/forms/assignis.js"></script> -->
 
 
 </head>
@@ -88,14 +88,14 @@
 											Assignment</span>
 								</a></li>
 								<li><a href="Assignis.jsp"> <i class="fa fa-list-alt"
-										aria-hidden="true"></i> <span>Assignis</span>
+										aria-hidden="true"></i> <span>Assignees</span>
 								</a></li>
 								<li><a href="Search.jsp"> <i class="fa fa-search"
 										aria-hidden="true"></i> <span>Search</span>
 								</a></li>
-								<li><a href="UploadHistory.jsp"> <i class="fa fa-tasks"
+								<!-- <li><a href="UploadHistory.jsp"> <i class="fa fa-tasks"
 										aria-hidden="true"></i> <span>Uploaded History</span>
-								</a></li>
+								</a></li> -->
 
 							</ul>
 						</nav>
@@ -135,37 +135,35 @@
 					<div class="col-xs-12">
 						<section class="panel">
 							<header class="panel-heading">
-
-
-								<h2 style="align-items: center">Assignis to Assignment</h2>
+								<h5>${success}</h5>
+								<h2 style="align-items: center">Assignee to Assignment</h2>
 							</header>
 							<div class="panel-body">
-								<form class="form-horizontal form-bordered" action="assignis" method="post">
+								<form class="form-horizontal form-bordered" action="assignis"
+									method="post">
 									<div class="form-group">
 										<label class="col-md-3 control-label">Pin</label>
 										<div class="col-md-6">
-											<select data-plugin-selectTwo class="form-control populate"
+											<!-- <select data-plugin-selectTwo class="form-control populate"
 												name="pid" id="pid">
 												<option value="">Select</option>
-
-
-											</select>
+											</select> -->
+													<input name="pid" id="pid" type="number" class="form-control input-lg"   required="required">
+											
 										</div>
 									</div>
 
 									<div class="form-group">
-										<label class="col-md-3 control-label">Assignis</label>
+										<label class="col-md-3 control-label">Assignees</label>
 										<div class="col-md-6">
 
-											<textarea class="form-control populate" name="email"
-												rows="5" cols="10"></textarea>
-
+											<textarea class="form-control populate" name="email" rows="5"
+												cols="10"></textarea>
 										</div>
 									</div>
 
 									<div class="col-sm-6 text-right">
 										<button type="submit" class="btn btn-primary hidden-xs">Assign</button>
-
 									</div>
 								</form>
 						</section>

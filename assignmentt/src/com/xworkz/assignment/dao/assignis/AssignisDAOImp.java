@@ -35,17 +35,25 @@ public class AssignisDAOImp implements AssignisDAO {
 			Query query = ss.createQuery(hql);
 			CreateAssignmentEntity entity = (CreateAssignmentEntity) query.uniqueResult();
 			//going to save data of Assignee
-			AssignisEntity assignisEntity=new AssignisEntity();
+			//AssignisEntity assignisEntity=new AssignisEntity();
+			CreateAssignmentEntity createAssignmentEntity = new CreateAssignmentEntity();
+			createAssignmentEntity.setPin(pid);
+			tx=ss.beginTransaction();
 			for(int i=0;i<emails.length;i++)
 			{
-				tx=ss.beginTransaction();
-				assignisEntity.setPin(pid);
+				AssignisEntity assignisEntity=new AssignisEntity();
+				assignisEntity.setAssignmentEntity(createAssignmentEntity);
 				assignisEntity.setEmail(emails[i]);
+				
+				System.out.println("AssigmentEntity Email Data:"+assignisEntity.getEmail());
+				System.out.println("AssigmentEntity PIN Data:"+assignisEntity.getAssignmentEntity().getPin());
+				
 				ss.save(assignisEntity);		
 				System.out.println("Data Save in AssigneeDAO:"+emails[i]+" "+"And pin:"+pid);
-				tx.commit();
-				ss.flush();
+				
+				
 			}
+			tx.commit();
 			
 			return entity;
 		} catch (HibernateException e) {

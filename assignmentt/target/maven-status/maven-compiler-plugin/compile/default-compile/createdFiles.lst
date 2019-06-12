@@ -11,9 +11,12 @@ com\xworkz\assignment\utils\adduser\RandomGenerator.class
 com\xworkz\assignment\controllers\adduser\AddUserController.class
 com\xworkz\assignment\dto\addtopic\AddTopicDTO.class
 com\xworkz\assignment\controllers\adduser\AssignisController.class
+com\xworkz\assignment\controllers\adduser\SearchAssignmentController.class
 com\xworkz\webservices\dao\adduser\CheckUserExistDAO.class
 com\xworkz\webservices\controllers\adduser\CheckUserExistController.class
+com\xworkz\assignment\dao\searchassign\SearchAssignmentDAO.class
 com\xworkz\assignment\entities\assignis\AssignisEntity.class
+com\xworkz\assignment\dao\searchassign\SearchAssignmentDAOImp.class
 com\xworkz\assignment\dto\createAssignment\CreateAssignmentDTO.class
 com\xworkz\webservices\services\adduser\CheckUserExistServiceImpl.class
 com\xworkz\webservices\services\assigni\PinLoadService.class
@@ -27,6 +30,7 @@ com\xworkz\assignment\dao\changepass\ChangePassDAOImpl.class
 com\xworkz\assignment\entities\audit\AuditEntity.class
 com\xworkz\webservices\dao\assigni\PinLoadDAOImp.class
 com\xworkz\assignment\services\assignis\AssignisService.class
+com\xworkz\assignment\controllers\adduser\AdviceController.class
 com\xworkz\assignment\dto\assignis\AssignisDTO.class
 com\xworkz\assignment\services\createassign\CreateAssignmentServiceImp.class
 com\xworkz\webservices\dao\assigni\PinLoadDAO.class
@@ -38,6 +42,7 @@ com\xworkz\assignment\services\changepass\ChangePassServiceImpl.class
 com\xworkz\assignment\dao\createassign\CreateAssignmentDAOImp.class
 com\xworkz\assignment\dto\signup\SignUpDTO.class
 com\xworkz\assignment\dao\createassign\CreateAssignmentDAO.class
+com\xworkz\assignment\services\searchassign\SearchAssigmentService.class
 com\xworkz\assignment\controllers\adduser\CreateAssignmentController.class
 com\xworkz\assignment\dao\signInuser\SignInUserDetailsDAOImpl.class
 com\xworkz\webservices\controllers\adduser\PinLoadController.class
@@ -46,6 +51,7 @@ com\xworkz\assignment\email\MailSender.class
 com\xworkz\assignment\services\adduser\AddUserDetailsService.class
 com\xworkz\webservices\dao\adduser\CheckUserExistDAOImpl.class
 com\xworkz\assignment\dao\assignis\AssignisDAOImp.class
+com\xworkz\assignment\services\searchassign\SearchAssignmentServiceImp.class
 com\xworkz\assignment\services\assignis\AssignisServiceImp.class
 com\xworkz\webservices\services\adduser\CheckUserExistService.class
 com\xworkz\assignment\entities\addtopic\AddTopicEntity.class

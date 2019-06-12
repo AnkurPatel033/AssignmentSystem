@@ -100,14 +100,14 @@ display_c();
 											Assignment</span>
 								</a></li>
 								<li><a href="Assignis.jsp"> <i class="fa fa-list-alt"
-										aria-hidden="true"></i> <span>Assignis</span>
+										aria-hidden="true"></i> <span>Assignees</span>
 								</a></li>
 								<li><a href="Search.jsp"> <i class="fa fa-search"
 										aria-hidden="true"></i> <span>Search</span>
 								</a></li>
-								<li><a href="UploadHistory.jsp"> <i class="fa fa-tasks"
+								<!-- <li><a href="UploadHistory.jsp"> <i class="fa fa-tasks"
 										aria-hidden="true"></i> <span>Uploaded History</span>
-								</a></li>
+								</a></li> -->
 
 							</ul>
 						</nav>
@@ -139,8 +139,12 @@ display_c();
 				</header>
 
 				<!-- start: page -->
+				
+				
 
 			</section>
+		
+			
 			<div class="footer">
 				<p class="text-center text-muted mt-md mb-md">© 2019 X-Workz . All Rights Reserved.</p>
 			</div>

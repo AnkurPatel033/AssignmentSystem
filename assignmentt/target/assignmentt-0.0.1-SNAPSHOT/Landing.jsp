@@ -61,7 +61,7 @@ display_c();
 		</header>
 		<!-- end: header -->
 		<div class="header">
-			<h1 class="text-center text-muted mt-md mb-md">Assigment
+			<h1 class="text-center text-muted mt-md mb-md">Assignment
 				Management System</h1>
 		</div>
 

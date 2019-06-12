@@ -28,9 +28,9 @@ public class AssignisServiceImp implements AssignisService {
 			System.out.println("Service:"+pidId);
 			CreateAssignmentEntity entity=dao.assigniEmail(pidId,email);
 			System.out.println("Assigment pin:"+entity);
-			System.out.println(email[0]);
-			System.out.println(email[1]);
-			System.out.println(email[2]);
+			//System.out.println(email[0]);
+			//System.out.println(email[1]);
+			//System.out.println(email[2]);
 			mainSender.mailAssigins(entity, email);
 		} catch (DAOException e) {
 			System.out.println("Exception From Service:" + e.getMessage());

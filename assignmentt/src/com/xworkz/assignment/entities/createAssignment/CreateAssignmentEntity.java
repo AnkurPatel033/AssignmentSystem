@@ -44,7 +44,7 @@ public class CreateAssignmentEntity implements Serializable{
 	private long pin;
 	
 	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	@JoinColumn(name="PIN")
+	@JoinColumn(name="PIN") //////////////////////error
 	private List<AssignisEntity> emails;
 	
 	
@@ -117,7 +117,7 @@ public class CreateAssignmentEntity implements Serializable{
 	@Override
 	public String toString() {
 		return " course=" + course + ", topic=" + topic + ", desc=" + desc
-				+ ", date=" + date + ", uploadType=" + uploadType + ", pin=" + pin + ", emails=" + emails + "";
+				+ ", date=" + date + ", uploadType=" + uploadType + ", pin=" + pin ;
 	}
 	
 }

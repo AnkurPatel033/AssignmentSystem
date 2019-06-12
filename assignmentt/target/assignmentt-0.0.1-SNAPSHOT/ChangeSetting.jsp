@@ -85,24 +85,24 @@
 									<li>
 											<a href="Assignis.jsp">
 												<i class="fa fa-list-alt" aria-hidden="true"></i>
-												<span>Assignis</span>
+												<span>Assignees</span>
 											</a>
 											
 										</li>
 										<li>
-												<a href="Search.html">
+												<a href="Search.jsp">
 													<i class="fa fa-search" aria-hidden="true"></i>
 													<span>Search</span>
 												</a>
 												
 											</li>
-											<li>
+											<!-- <li>
 												<a href="UploadHistory.jsp">
 													<i class="fa fa-tasks" aria-hidden="true"></i>
 													<span>Uploaded History</span>
 												</a>
 												
-											</li>
+											</li> -->
 								
 								</ul>
 							</nav>			

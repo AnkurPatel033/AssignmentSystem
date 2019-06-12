@@ -29,7 +29,7 @@ public class AssignisController {
 		String[] emails = email.split(",");
 	    for (int i=0; i < emails.length; i++)
 	    {
-	    	//going to check emailId validation
+	    	  //going to check emailId validation
 	           System.out.println(emails[i]);
 	    }
 

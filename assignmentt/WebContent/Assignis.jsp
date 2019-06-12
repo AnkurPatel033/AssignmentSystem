@@ -139,8 +139,7 @@
 								<h2 style="align-items: center">Assignee to Assignment</h2>
 							</header>
 							<div class="panel-body">
-								<form class="form-horizontal form-bordered" action="assignis"
-									method="post">
+								<form class="form-horizontal form-bordered" action="assignis"	method="post">
 									<div class="form-group">
 										<label class="col-md-3 control-label">Pin</label>
 										<div class="col-md-6">
@@ -152,7 +151,6 @@
 											
 										</div>
 									</div>
-
 									<div class="form-group">
 										<label class="col-md-3 control-label">Assignees</label>
 										<div class="col-md-6">

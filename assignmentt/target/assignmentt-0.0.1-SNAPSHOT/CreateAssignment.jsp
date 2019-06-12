@@ -84,7 +84,7 @@
 									<li>
 											<a href="Assignis.jsp">
 												<i class="fa fa-list-alt" aria-hidden="true"></i>
-												<span>Assignis</span>
+												<span>Assignees</span>
 											</a>
 											
 										</li>
@@ -95,13 +95,12 @@
 												</a>
 												
 											</li>
-											<li>
+											<!-- <li>
 												<a href="UploadHistory.jsp">
 													<i class="fa fa-tasks" aria-hidden="true"></i>
 													<span>Uploaded History</span>
 												</a>
-												
-											</li>
+											</li> -->
 								
 								</ul>
 							</nav>			

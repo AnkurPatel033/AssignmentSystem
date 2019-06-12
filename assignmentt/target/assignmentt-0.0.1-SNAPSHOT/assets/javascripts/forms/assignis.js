@@ -40,8 +40,4 @@ function fetchPinDetails() {
 	xmlHttp.open("GET", url, true);
 	xmlHttp.send();
 }
-function getCountryCode()
-{
-	//alert("hi...GetCountryCode");
-	//$('#code').val($('#country').val());
-}
+
