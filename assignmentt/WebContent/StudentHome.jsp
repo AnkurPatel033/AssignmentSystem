@@ -75,20 +75,6 @@
 									</li>
 								
 									<li>
-										<a href="CreateAssignment.jsp">
-											<i class="fa fa-copy" aria-hidden="true"></i>
-											<span>Create Assignment</span>
-										</a>
-										
-									</li>
-									<li>
-											<a href="Assignis.jsp">
-												<i class="fa fa-list-alt" aria-hidden="true"></i>
-												<span>Assignis</span>
-											</a>
-											
-										</li>
-										<li>
 												<a href="Search.jsp">
 													<i class="fa fa-search" aria-hidden="true"></i>
 													<span>Search</span>
@@ -153,14 +139,7 @@
 		
 									<div class="form-group mb-none">
 										<div class="row">
-											<div class="col-sm-4 mb-lg">
-												<label>Country Code*</label>
-												<select name="ccode">
-												<option value="">Select</option>
-												<option value="IND">(+91)IND</option>
-												</select>
-											</div>
-											<div class="col-sm-8 mb-lg">
+											<div class="col-sm-12 mb-lg">
 												<label>ContactNo*</label>
 												<input name="cno" type="number" class="form-control input-lg" maxlength="10">
 												
