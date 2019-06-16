@@ -9,7 +9,7 @@
 <!-- Basic -->
 <meta charset="UTF-8">
 
-<title>500</title>
+<title>AdminHome</title>
 <meta name="keywords" content="HTML5 Admin Template" />
 <meta name="description"
 	content="Porto Admin - Responsive HTML5 Template">
@@ -82,19 +82,25 @@
 										aria-hidden="true"></i> <span>Change Setting</span>
 								</a></li>
 
-								<li><a href="CreateAssignment.jsp"> <i
-										class="fa fa-copy" aria-hidden="true"></i> <span>Create
-											Assignment</span>
+								<li><a href="#"> <i
+										class="fa fa-copy" aria-hidden="true"></i> <span>Update Trainers
+											</span>
 								</a></li>
-								<li><a href="Assignis.jsp"> <i class="fa fa-list-alt"
-										aria-hidden="true"></i> <span>Assignis</span>
+								<li><a href="#"> <i class="fa fa-list-alt"
+										aria-hidden="true"></i> <span>Update Students</span>
 								</a></li>
-								<li><a href="Search.jsp"> <i class="fa fa-search"
+								<li><a href="#"> <i class="fa fa-list-alt"
+										aria-hidden="true"></i> <span>Update Course</span>
+								</a></li>
+								<li><a href="#"> <i class="fa fa-list-alt"
+										aria-hidden="true"></i> <span>Update Topics</span>
+								</a></li>
+								<li><a href="#"> <i class="fa fa-search"
 										aria-hidden="true"></i> <span>Search</span>
 								</a></li>
-								<li><a href="UploadHistory.jsp"> <i class="fa fa-tasks"
+								<!-- <li><a href="UploadHistory.jsp"> <i class="fa fa-tasks"
 										aria-hidden="true"></i> <span>Uploaded History</span>
-								</a></li>
+								</a></li> -->
 
 							</ul>
 						</nav>
@@ -109,7 +115,7 @@
 
 			<section role="main" class="content-body">
 				<header class="page-header">
-					<h2 align="center">500</h2>
+					<h2 align="center">Dashboard</h2>
 
 					<div class="right-wrapper pull-right">
 						<ol class="breadcrumbs">
@@ -127,19 +133,7 @@
 
 				<!-- start: page -->
 				
-				<section class="body-error error-inside">
-							<div class="center-error">
-
-								<div class="row">
-									<div class="col-md-12">
-										<div class="main-error mb-xlg">
-											<h2 class="error-code text-dark text-center text-semibold m-none"><i class="fa fa-file"></i></h2>
-											<p class="error-explanation text-center">We're sorry, but the page you were looking for doesn't exist.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
+				
 
 			</section>
 		

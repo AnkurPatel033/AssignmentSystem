@@ -42,6 +42,7 @@
 
 <!-- Head Libs -->
 <script src="assets/vendor/modernizr/modernizr.js"></script>
+<script src="assets/javascripts/forms/dateTime.js"></script>
 
 </head>
 <body>

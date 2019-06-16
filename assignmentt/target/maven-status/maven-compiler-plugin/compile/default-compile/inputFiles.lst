@@ -3,10 +3,12 @@ C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\dto\creat
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\dto\assignis\AssignisDTO.java
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\dto\signup\SignUpDTO.java
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\services\signInuser\SignInUserServiceImpl.java
+C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\controllers\adduser\AssignUploadController.java
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\dao\adduser\AddUserDetailsDAO.java
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\webservices\services\adduser\CheckUserExistService.java
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\exceptions\ServiceException.java
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\controllers\adduser\CreateAssignmentController.java
+C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\dto\assignupload\AssignUploadDTO.java
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\services\assignis\AssignisService.java
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\dao\searchassign\SearchAssignmentDAO.java
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\webservices\dao\adduser\CheckUserExistDAOImpl.java
@@ -47,6 +49,7 @@ C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\services\
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\webservices\dao\assigni\PinLoadDAOImp.java
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\dto\addcourse\AddCourseDTO.java
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\controllers\adduser\AssignisController.java
+C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\entities\assignupload\AssignUploadEntity.java
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\dao\changepass\ChangePassDAOImpl.java
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\utils\adduser\RandomGenerator.java
 C:\Users\HP\git\AssignmentSystem\assignmentt\src\com\xworkz\assignment\controllers\adduser\LoginUserController.java

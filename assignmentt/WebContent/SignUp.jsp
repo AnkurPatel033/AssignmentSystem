@@ -42,22 +42,9 @@
 <!-- Head Libs -->
 <script src="assets/vendor/modernizr/modernizr.js"></script>
 <script src="assets/javascripts/forms/email.js"></script>   
-<script type="text/javascript"> 
-function display_c(){
-var refresh=1000; // Refresh rate in milli seconds
-mytime=setTimeout('display_ct()',refresh)
-}
-
-function display_ct() {
-var x = new Date()
-var x1=x.getMonth() + 1+ "/" + x.getDate() + "/" + x.getYear(); 
-x1 = x1 + " - " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds();
-document.getElementById('ct').innerHTML = x1;
-display_c();
- }
-</script>
-
-<script type="text/javascript">
+<script src="assets/javascripts/forms/dateTime.js"></script>
+<script src="assets/javascripts/forms/getCountries.js"></script>
+<!-- <script type="text/javascript">
 function fetchCountryDetails() {
 		var url = "https://restcountries.eu/rest/v2/all";
 		
@@ -98,7 +85,7 @@ function fetchCountryDetails() {
 		$('#code').val($('#country').val());
 	}
 
-</script>
+</script> -->
 </head>
 <body onload=display_ct();fetchCountryDetails();>
 	<section class="body">

@@ -34,148 +34,94 @@
 
 		<!-- Head Libs -->
 		<script src="assets/vendor/modernizr/modernizr.js"></script>
+		<script src="assets/javascripts/forms/dateTime.js"></script>
 
 	</head>
-	<body>
-		<section class="body">
-
-		<!-- start: header -->
-		<!-- start: header -->
-		<div class="header">
-				<h1 class="text-center text-muted mt-md mb-md">Assignment Management System</h1>
-				<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
-					<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
-				</div>
-				</div>
-			<!-- end: header -->
-	
+	<body onload=display_ct();>
+	<section class="body">
+		<!-- end: search & user box -->
+		</header>
 		<!-- end: header -->
+		<div class="header">
+			<h1 class="text-center text-muted mt-md mb-md">Assignment Management System</h1>
+		</div>
 
-			<div class="inner-wrapper">
-				<aside id="sidebar-left" class="sidebar-left">
-			
-					<div class="sidebar-header">
-						<div class="sidebar-title">
-							Assigments
-						</div>
-						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
-							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
-						</div>
-					</div>
-				
-					<div class="nano">
-						<div class="nano-content">
-							<nav id="menu" class="nav-main" role="navigation">
-								<ul class="nav nav-main">
-									<li>
-										<a href="ChangeSetting.jsp">
-											<i class="fa fa-home" aria-hidden="true"></i>
-											<span>Change Setting</span>
-										</a>
-									</li>
-								
-									<li>
-												<a href="Search.jsp">
-													<i class="fa fa-search" aria-hidden="true"></i>
-													<span>Search</span>
-												</a>
-												
-											</li>
-											<li>
-												<a href="UploadHistory.jsp">
-													<i class="fa fa-tasks" aria-hidden="true"></i>
-													<span>Uploaded History</span>
-												</a>
-												
-											</li>
-								
-								</ul>
-							</nav>			
-						</div>
-				
-					</div>
-				
-				</aside>
-				<!-- end: sidebar -->
-				</aside>
-				<!-- end: sidebar -->
+		<div class="inner-wrapper">
 
-				<section role="main" class="content-body">
-					<header class="page-header">
-						<h2 align="center">Dashboard</h2>
-					
-						<div class="right-wrapper pull-right">
-							<ol class="breadcrumbs">
-								<li>
-									<a href="">
-										<i class=""></i>
-									</a>
-								</li>
+			</aside>
+			<!-- end: sidebar -->
+
+			<section role="main" class="content-body">
+				<header class="page-header">
+					<ol class="breadcrumbs">
+						<li><a href=""><span class="separator"></span> <i
+								class="fa ">Date & Time:<span id='ct'></span></i> </a></li>
+					</ol>
+
+					 <div class="right-wrapper pull-right">
+						<ol class="breadcrumbs">
+							<li><a href="#"> <i class="fa fa-home"></i>
+							</a></li>
+
+							<!--  <li><a href="StudentHomeZip.jsp">ZIP</a></li> -->
+							<span class="separator"></span>
 							
-								<li><a class="fa fa-use">Welcome, ${sessionScope.userEntity.fname}</a></li>
-								<span class="separator"></span>
-								<li><a class="fa fa-power-off" href="signOut"> LogOut</a></li>
-							
-								<li></li>
-							</ol>
-				
-						</div>
-					</header>
 
-				<!-- start: page -->
+							<li></li>
+						</ol>
+
+					</div>
+				</header>
+	<!-- start: page -->
 				<section class="body-sign">
 					<div class="center-sign">
 						
 						<div class="panel panel-sign">
 								
-							<div class="panel-body">
-								<form action="SignIn.html" method="POST">
+							<div class="panel-body"><h4>${msg}</h4>
+								<form action="assignmentUpload" method="post" enctype="multipart/form-data">
 									<div class="form-group mb-none">
+									<div class="form-group mb-lg">
+										<label>Assignment Pin*</label>
+										<input name="pin" type="number" class="form-control input-lg" required="required">
+									</div>		
 												
 									<div class="form-group mb-lg">
 										<label>E-mail Address*</label>
-										<input name="email" type="email" class="form-control input-lg" placeholder="xxxx@xxx.xxx">
+										<input name="email" type="email" class="form-control input-lg" placeholder="xxxx@xxx.xxx" required="required">
 									</div>
 		
 									<div class="form-group mb-none">
 										<div class="row">
 											<div class="col-sm-12 mb-lg">
 												<label>ContactNo*</label>
-												<input name="cno" type="number" class="form-control input-lg" maxlength="10">
+												<input name="cNo" type="number" class="form-control input-lg" maxlength="10" required="required">
 												
 											</div>
 										</div>
 									</div>
 									<div class="form-group mb-lg">
-										<label>URL</label>
-										<input name="url" type="text" class="form-control input-lg" >
+										<label>GIT URL</label>
+										<input name="url" type="text" class="form-control input-lg" required="required">
 									</div>
-									<span>-----------------------------------------------OR---------------------------------------------</span>
+									 <p>----------------------------------------------OR----------------------------------------------</p>
 									<div class="form-group mb-lg">
-										<label>File</label>
-										<a class="btn btn-block btn-primary btn-md pt-sm pb-sm text-md">
-											<i class="fa fa-upload mr-xs"></i>
-											Upload Files
-										</a>
-									</div>
-		
+											 <label>File</label>
+											<i class="fa fa-upload mr-xs" re>Please select a file to upload : </i>
+											<input type="file"	name="file" /> <!-- <input type="submit" class="btn btn-block btn-primary btn-md pt-sm pb-sm text-md" value="upload" />
+											 <span><form:errors		path="file" cssClass="error" /> </span> -->
+										</div>
+		                           
 									<div class="row">
 										<div class="col-sm-8">
-											<div class="checkbox-custom checkbox-default">
-												<input id="AgreeTerms" name="agreeterms" type="checkbox">
-												<label for="AgreeTerms">I agree with <a href="#">terms of use</a></label>
-											</div>
+											
 										</div>
 										<div class="col-sm-4 text-right">
-											<button type="submit" class="btn btn-primary hidden-xs">Sign Up</button>
-											<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Sign Up</button>
+											<button type="submit" class="btn btn-primary hidden-xs">Submit</button>
+											
 										</div>
 									</div>
-		
-		
-									<p class="text-center">Already have an account? <a href="SignIn.html">Sign In!</a>
-		
-								</p></form>
+		                        </form>
 							</div>
 						</div>
 		

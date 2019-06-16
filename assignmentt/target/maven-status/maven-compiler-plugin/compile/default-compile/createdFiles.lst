@@ -16,6 +16,7 @@ com\xworkz\webservices\dao\adduser\CheckUserExistDAO.class
 com\xworkz\webservices\controllers\adduser\CheckUserExistController.class
 com\xworkz\assignment\dao\searchassign\SearchAssignmentDAO.class
 com\xworkz\assignment\entities\assignis\AssignisEntity.class
+com\xworkz\assignment\controllers\adduser\AssignUploadController.class
 com\xworkz\assignment\dao\searchassign\SearchAssignmentDAOImp.class
 com\xworkz\assignment\dto\createAssignment\CreateAssignmentDTO.class
 com\xworkz\webservices\services\adduser\CheckUserExistServiceImpl.class
@@ -37,11 +38,13 @@ com\xworkz\webservices\dao\assigni\PinLoadDAO.class
 com\xworkz\assignment\exceptions\ServiceException.class
 com\xworkz\assignment\dao\assignis\AssignisDAO.class
 com\xworkz\assignment\services\signInuser\SignInUserService.class
+com\xworkz\assignment\dto\assignupload\AssignUploadDTO.class
 com\xworkz\assignment\exceptions\DAOException.class
 com\xworkz\assignment\services\changepass\ChangePassServiceImpl.class
 com\xworkz\assignment\dao\createassign\CreateAssignmentDAOImp.class
 com\xworkz\assignment\dto\signup\SignUpDTO.class
 com\xworkz\assignment\dao\createassign\CreateAssignmentDAO.class
+com\xworkz\assignment\entities\assignupload\AssignUploadEntity.class
 com\xworkz\assignment\services\searchassign\SearchAssigmentService.class
 com\xworkz\assignment\controllers\adduser\CreateAssignmentController.class
 com\xworkz\assignment\dao\signInuser\SignInUserDetailsDAOImpl.class

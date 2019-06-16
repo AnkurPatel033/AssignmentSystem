@@ -34,6 +34,7 @@
 
 		<!-- Head Libs -->
 		<script src="assets/vendor/modernizr/modernizr.js"></script>
+		<script src="assets/javascripts/forms/dateTime.js"></script>
 
 	</head>
 	<body>
@@ -175,13 +176,14 @@
 																	<option value="Collections">Collections</option>
 																	<option value="Stream API">Stream API</option>
 																	<option value="Lambda Functions">Lambda Functions</option>
+																	
 																</optgroup>
 																<optgroup label="Hibernate">
 																	<option value="Component">Component</option>
 																	<option value="ORM's Problems">ORM's Problems</option>
 																	<option value="HQL">HQL</option>
 																	<option value="Custome Generator">Custome Generator</option>
-																	<option value="1st Level Catch">1st Level Catch</option>
+																	<option value="1st Level Cache">1st Level Cache</option>
 																	<option value="Named Queries">Named Queries</option>
 																	<option value="Hikari Configuration">Hikari Configuration</option>
 																</optgroup>
