@@ -42,8 +42,9 @@
 <!-- Head Libs -->
 <script src="assets/vendor/modernizr/modernizr.js"></script>
 <script src="assets/javascripts/forms/dateTime.js"></script>
+<!-- <script src="assets/javascripts/forms/sessionCheck.js"></script> -->
 </head>
-<body onload=display_ct();>
+<body onload="display_ct();">
 	<section class="body">
 
 		<!-- start: header -->

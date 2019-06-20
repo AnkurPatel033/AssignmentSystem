@@ -83,7 +83,9 @@
 				<!-- start: page -->
 				<section class="body-sign">
 					<div class="center-sign">
-					<p>${message}</p>
+					<p></p>
+					<h5 style="color: red;">${message}</h5>
+						<h5 style="color: red;">${SessionMsg}</h5>
 						<div class="panel panel-sign">
 							<div class="panel-body">
 								<form action="signIn" method="post">

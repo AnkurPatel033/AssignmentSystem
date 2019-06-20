@@ -1,5 +1,9 @@
 package com.xworkz.assignment.controllers.adduser;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.http.HttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,8 +29,13 @@ public class CreateAssignmentController {
 	}
 
 	@RequestMapping(value="/createAssignment",method=RequestMethod.POST)
-	public String createAssignment(CreateAssignmentDTO dto,Model model ) throws ControllerException
+	public String createAssignment(CreateAssignmentDTO dto,Model model,HttpServletRequest request ) throws ControllerException
 	{
+		HttpSession oldSession = request.getSession(false);
+
+		System.out.println("User:" + oldSession.getAttribute("userEntity"));
+
+		if (oldSession.getAttribute("userEntity") != null) {
 		
 		System.out.println("Create Assignment Method Calling:"+dto);
 		try {
@@ -36,6 +45,14 @@ public class CreateAssignmentController {
 		} catch (ServiceException e) {
 			System.out.println("Exception From Controller:"+e.getMessage());
 			throw new ControllerException(e.getMessage());
+		}
+		
+		}
+		else
+		{
+			System.out.println("Session TimeOut:SignIn Again...");
+			model.addAttribute("SessionMsg", "SignIn First!!!");
+			return EnumUtils.SignIn.toString();
 		}
 		return EnumUtils.CreateAssignment.toString();
 	}

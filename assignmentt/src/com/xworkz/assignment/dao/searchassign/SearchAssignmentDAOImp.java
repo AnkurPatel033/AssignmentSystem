@@ -26,7 +26,8 @@ public class SearchAssignmentDAOImp implements SearchAssignmentDAO {
 		Session ss = null;
 		try {
 			ss = sf.openSession();
-			String hql = "From CreateAssignmentEntity entity where entity.pin='" + pid + "'";
+		//	String hql = "From CreateAssignmentEntity entity where entity.pin ='" + pid + "'";
+			String hql = "From CreateAssignmentEntity entity where entity.pin like '%" + pid + "%'";
 			Query query = ss.createQuery(hql);
 			CreateAssignmentEntity entity = (CreateAssignmentEntity) query.uniqueResult();
 			System.out.println("Entity return From DB in DAO is:" + entity);

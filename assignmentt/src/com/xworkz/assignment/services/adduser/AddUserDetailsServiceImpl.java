@@ -5,6 +5,10 @@ import java.util.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.twilio.Twilio;
+import com.twilio.base.ResourceSet;
+import com.twilio.rest.chat.v1.service.channel.Message;
+import com.twilio.type.PhoneNumber;
 import com.xworkz.assignment.dao.adduser.AddUserDetailsDAO;
 import com.xworkz.assignment.dto.signup.SignUpDTO;
 import com.xworkz.assignment.email.MailSender;
@@ -100,5 +104,16 @@ public class AddUserDetailsServiceImpl implements AddUserDetailsService {
 		}
 		return false;
 	}
-
+	/*public String sendMsg()
+	{
+		Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+		Message message = Message.creator(new PhoneNumber("+12225559999"),new PhoneNumber("+919737514379"),"Sample Twilio SMS using Java")
+		.create();
+		
+		ResourceSet messages = Message.reader().read();
+		for (Message message : messages) {
+		    System.out.println(message.getSid() + " : " + message.getStatus());
+		}
+	}
+*/
 }

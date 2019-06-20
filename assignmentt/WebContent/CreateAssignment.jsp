@@ -35,9 +35,12 @@
 		<!-- Head Libs -->
 		<script src="assets/vendor/modernizr/modernizr.js"></script>
 		<script src="assets/javascripts/forms/dateTime.js"></script>
+		<script src="assets/javascripts/forms/getCourse.js"></script>
+		 <script src="assets/javascripts/forms/sessionCheck.js"></script>
+		
 
 	</head>
-	<body>
+	<body onload="fetchCourseDetails();">
 		<section class="body">
 
 		<!-- start: header -->
@@ -102,7 +105,6 @@
 													<span>Uploaded History</span>
 												</a>
 											</li> -->
-								
 								</ul>
 							</nav>			
 						</div>
@@ -143,7 +145,7 @@
 							<div class="col-xs-12">
 								<section class="panel">
 									<header class="panel-heading">				
-						             <h5>${success}</h5>
+						          <h5 style="color: red;">${success}</h5>
 										<h2 style="align-items: center">Create New Assignment</h2>
 									</header>
 									<div class="panel-body">
@@ -151,25 +153,25 @@
 											<div class="form-group">
 												<label class="col-md-3 control-label">Course</label>
 												<div class="col-md-6">
-														<select data-plugin-selectTwo class="form-control populate" name="course">
-																<option value="">Select</option>
-																	<option value="Core Java">Core Java</option>
+														<select data-plugin-selectTwo onchange="onChangeCourse()" class="form-control populate" name="course" id="course">
+																<option value="" >Select</option>
+																	<!-- <option value="Core Java">Core Java</option>
 																	<option value="Hibernate">Hibernate</option>
 																	<option value="Spring">Spring</option>
 																	<option value="SQL">SQL</option>
 																	<option value="Github">Github</option>
 																	<option value="Maven">Maven</option>
 																	<option value="RestfullWebServices">RestfullWebServices</option>
-																	<option value="Cloud">Cloud</option>
+																	<option value="Cloud">Cloud</option> -->
 															</select>
 												</div>
 											</div>					
 											<div class="form-group">
 												<label class="col-md-3 control-label">Topic</label>
 												<div class="col-md-6">
-														<select data-plugin-selectTwo class="form-control populate" name="topic">
+														<select data-plugin-selectTwo class="form-control populate" name="topic" id="topic">
 																<option value=" ">Select</option>	
-															<optgroup label="Core Java">
+															<!-- <optgroup label="Core Java">
 																	<option value="OOPs Principals">OOPs Principals</option>
 																	<option value="Strings">Strings</option>
 																	<option value="Thread">Thread</option>
@@ -197,7 +199,7 @@
 																	<option value="Spring with ORM">Spring with ORM</option>
 																	<option value="Spring-MVC">Spring-MVC</option>
 																	
-																</optgroup>
+																</optgroup> -->
 															</select>
 												</div>
 											</div>
@@ -205,7 +207,7 @@
 												<label class="col-md-3 control-label">Description</label>
 												<div class="col-md-6">
 													
-															<textarea class="form-control populate" name="desc" rows="5" cols="10"></textarea>
+															<textarea class="form-control populate" name="desc" rows="5" cols="10" required="required"></textarea>
 												
 												</div>
 											</div>
@@ -216,14 +218,14 @@
 																		<span class="input-group-addon">
 																			<i class="fa fa-calendar"></i>
 																		</span>
-																		<input type="text" name="date" data-plugin-datepicker class="form-control">
+																		<input type="text" name="date" data-plugin-datepicker class="form-control" required="required">
 																</div>
 													</div>
 											</div>
 											<div class="form-group">
 													<label class="col-md-3 control-label">Upload Type</label>
 													<div class="col-md-6">
-															<select data-plugin-selectTwo class="form-control populate" name="uploadType">
+															<select data-plugin-selectTwo class="form-control populate" name="uploadType" required="required">
 																	<option value="uploadType">Select</option>
 																		<option value="ZIP">ZIP</option>
 																		<option value="GIT">GIT</option>

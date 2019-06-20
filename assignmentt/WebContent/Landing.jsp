@@ -78,7 +78,7 @@ function display_c(){
 			<section role="main" class="content-body">
 				<header class="page-header">
 					<ol class="breadcrumbs">
-						<li><a href=""><span class="separator"></span> <i
+						<li><a href="#"><span class="separator"></span> <i
 								class="fa ">Date & Time:<span id='ct'></span></i> </a></li>
 					</ol>
 

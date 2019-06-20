@@ -9,7 +9,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Change Setting</title>
+		<title>Create Assignment</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -34,9 +34,13 @@
 
 		<!-- Head Libs -->
 		<script src="assets/vendor/modernizr/modernizr.js"></script>
-       <script src="assets/javascripts/forms/dateTime.js"></script>
+		<script src="assets/javascripts/forms/dateTime.js"></script>
+		<script src="assets/javascripts/forms/getCourse.js"></script>
+		 <script src="assets/javascripts/forms/sessionCheck.js"></script>
+		
+
 	</head>
-	<body>
+	<body onload="fetchCourseDetails();">
 		<section class="body">
 
 		<!-- start: header -->
@@ -56,7 +60,7 @@
 			
 					<div class="sidebar-header">
 						<div class="sidebar-title">
-							Change Settings
+							Assignments
 						</div>
 						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
 							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
@@ -65,7 +69,6 @@
 				
 					<div class="nano">
 						<div class="nano-content">
-						
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
 									<li>
@@ -101,9 +104,7 @@
 													<i class="fa fa-tasks" aria-hidden="true"></i>
 													<span>Uploaded History</span>
 												</a>
-												
 											</li> -->
-								
 								</ul>
 							</nav>			
 						</div>
@@ -117,6 +118,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
+					
 						<h2 align="center">Change Settings</h2>
 					
 						<div class="right-wrapper pull-right">
@@ -138,61 +140,88 @@
 					</header>
 
 					<!-- start: page -->
-					<!-- start: page -->
-					<section class="body-sign">
-						<div class="center-sign">
-							<p>${message}</p>
-							<div class="panel panel-sign">							
-	     						<div class="panel-body">
-									<form action="ChangeSetting" method="POST">
-										<div class="form-group mb-none">
-											<div class="row">
-												<!-- <div class="col-sm-6 mb-lg">
-													<label>Old Password</label>
-													<input name="opass" type="password" class="form-control input-lg" required="required">
-												</div> -->
-												<div class="col-sm-12 mb-lg">
-													<label>New Password</label>
-													<input name="npass" type="password" class="form-control input-lg"   required="required">
+									<!-- start: page -->
+						<div class="row">
+							<div class="col-xs-12">
+								<section class="panel">
+									<header class="panel-heading">				
+						          <h5 style="color: red;">${message}</h5>
+										<h2 style="align-items: center">Change Setting</h2>
+									</header>
+									<div class="panel-body">
+										<form class="form-horizontal form-bordered" action="ChangeSetting" method="post">
+											<div class="form-group">
+												<label class="col-md-3 control-label">Old Password</label>
+												<div class="col-md-6">
+												<input name="opass" type="password" value=""  class="form-control input-lg" >		
+												</div>
+											</div>					
+											<div class="form-group">
+												<label class="col-md-3 control-label">New Password</label>
+												<div class="col-md-6">
+												<input name="npass" type="password" value=""  class="form-control input-lg" >		
 												</div>
 											</div>
-										</div>
-			
-										<div class="form-group mb-lg">
-											<label>Confirm Password</label>
-											<input name="cpass" type="password" class="form-control input-lg" required="required">
-										</div>	
-										<div class="form-group mb-lg">
-											<label>Email</label>
-											<input name="email" type="email" value="${sessionScope.userEntity.email}"  class="form-control input-lg" readonly>
-										</div>			
-										<div class="row">
-											<div class="col-sm-8 text-right">
-												<button type="submit" class="btn btn-primary hidden-xs">Change</button>
-												<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Cancel</button>
+											<div class="form-group">
+												<label class="col-md-3 control-label">Confirm Password</label>
+												<div class="col-md-6">
+												<input name="cpass" type="password" value=""  class="form-control input-lg" >		
+												</div>				
 											</div>
-										</div>	
-									</p></form>
-								</div>
-							</div>
-			
-							
+											<div class="form-group">
+												<label class="col-md-3 control-label">Email</label>
+												<div class="col-md-6">
+												<input name="email" type="email" value="${sessionScope.userEntity.email}"  class="form-control input-lg" readonly="readonly">
+												<div>												
+											</div>
+											<div class="form-group">
+												
+												<div class="col-md-12">
+														
+												</div>				
+											</div>
+											
+											
+											<div class="form-group">
+												<div class="col-sm-6 text-right">
+														<button type="submit" class="btn btn-primary hidden-xs">Change</button>
+														<button type="reset" class="btn btn-primary hidden-xs">Cancel</button>
+													</div>												
+											</div>
+											
+												
+											</form>
+											</section>
+						
+						</section>
 						</div>
-					</section>
+						</div>	
+						</div>
+					<!-- end: page -->
 					
+					<div><div class="footer">
+							<p class="text-center text-muted mt-md mb-md">© 2019 X-Workz . All Rights Reserved.</p>
+							</div></div>
 					<!--End Page-->
 					
 				</section>
-				<div class="footer">
-					<p class="text-center text-muted mt-md mb-md">© 2019 X-Workz . All Rights Reserved.</p>
-					</div>
+			<!--<div class="footer">
+					<p class="text-center text-muted mt-md mb-md">Â© Copyright 2019. All Rights Reserved.</p>
+					</div> -->
 			</div>
 			</div>
 			
 			</div>
 			<!-- start: sidebar -->
+			
 	</div>
+	
+	
+	
+
 </div>
+
+
 
 			<!-- Vendor -->
 			<script src="assets/vendor/jquery/jquery.js"></script>			<script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>			<script src="assets/vendor/jquery-cookie/jquery.cookie.js"></script>			<script src="assets/vendor/style-switcher/style.switcher.js"></script>			<script src="assets/vendor/bootstrap/js/bootstrap.js"></script>			<script src="assets/vendor/nanoscroller/nanoscroller.js"></script>			<script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>			<script src="assets/vendor/magnific-popup/magnific-popup.js"></script>			<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>

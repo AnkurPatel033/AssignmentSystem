@@ -1,7 +1,8 @@
 package com.xworkz.assignment.services.createassign;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,6 @@ import com.xworkz.assignment.dao.createassign.CreateAssignmentDAO;
 import com.xworkz.assignment.dto.createAssignment.CreateAssignmentDTO;
 import com.xworkz.assignment.email.MailSender;
 import com.xworkz.assignment.entities.createAssignment.CreateAssignmentEntity;
-import com.xworkz.assignment.entities.signup.SignUpEntity;
 import com.xworkz.assignment.exceptions.DAOException;
 import com.xworkz.assignment.exceptions.ServiceException;
 import com.xworkz.assignment.utils.adduser.RandomGenerator;
@@ -46,14 +46,6 @@ public class CreateAssignmentServiceImp implements CreateAssignmentService {
 		entity1.setPin(pin);
 		System.out.println("Entity value:"+entity1);
 		
-		/*SignUpEntity entity2 = new SignUpEntity();
-		System.out.println("old entity:"+entity2);
-		*/
-		//email assignment pin number to assignee
-     	/*String email=(String) request.getAttribute("userName");
-		System.out.println("Seesion email:"+email);
-		mailSender.mailAssignmentPin(entity1, entity2, pin);
-		*/
 		try {
 
 			dao.createAssignment(entity1);
@@ -63,6 +55,32 @@ public class CreateAssignmentServiceImp implements CreateAssignmentService {
 		}
 		return pin;
 
+	}
+
+	@Override
+	public List<Object[]> courseLoad() throws ServiceException {
+		
+		System.out.println("courseLoad() calling from CreateAssignmentService..");
+		try {
+			List<Object[]> courses=dao.courseLoad();
+			return courses;
+		} catch (DAOException e) {
+			System.out.println("Exception From Service:" + e.getMessage());
+			throw new ServiceException(e.getMessage());
+		}
+		
+	}
+	@Override
+	public List<Object> topicLoad(int id) throws ServiceException {
+		
+		System.out.println("topicLoad() calling from CreateAssignmentService..:"+id);
+		try {
+			List<Object> topics=dao.topicLoad(id);
+			return topics;
+		} catch (DAOException e) {
+			System.out.println("Exception From Service:" + e.getMessage());
+			throw new ServiceException(e.getMessage());
+		}	
 	}
 
 }

@@ -43,6 +43,7 @@
 <!-- Head Libs -->
 <script src="assets/vendor/modernizr/modernizr.js"></script>
 <script src="assets/javascripts/forms/dateTime.js"></script>
+<!-- <script src="assets/javascripts/forms/sessionCheck.js"></script> -->
 
 </head>
 <body>
@@ -136,8 +137,7 @@
 								<h2 style="align-items: center">Search Assignment</h2>
 							</header>
 							<div class="panel-body">
-							<h4>${message}</h4>
-		
+						      <h5 style="color: red;">${message}</h5>
 								<form class="form-horizontal form-bordered" action="searchAssign" method="post">
 									<div class="form-group">
 										<label class="col-md-3 control-label">Pin</label>
@@ -172,13 +172,13 @@
 							<table class="table table-bordered table-striped dataTable no-footer" id="datatable-ajax" data-url="assets/ajax/ajax-datatables-sample.json" role="grid" aria-describedby="datatable-ajax_info">
 								<thead>
 									<tr role="row" align="center">
-										<th align="center" width="20%" class="sorting_asc" tabindex="0" aria-controls="datatable-ajax" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 10px;">Course</th>
-										<th width="25%" class="sorting" tabindex="0" aria-controls="datatable-ajax" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 10px;">Topic</th>
-										<th width="25%" class="sorting" tabindex="0" aria-controls="datatable-ajax" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 20px;">Description</th>
-										<th width="15%" class="sorting" tabindex="0" aria-controls="datatable-ajax" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 10px;">Deadline</th>
-										<th width="15%" class="sorting" tabindex="0" aria-controls="datatable-ajax" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >UploadType</th>
-										<th width="15%" class="sorting" tabindex="0" aria-controls="datatable-ajax" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >PinNo</th>
-									    <th width="25%" class="sorting" tabindex="0" aria-controls="datatable-ajax" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending"	style="width: 20px;">Assignees</th>
+					<th align="center" width="20%" class="sorting_asc" tabindex="0" aria-controls="datatable-ajax" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 10px;">Course</th>
+					<th width="25%" class="sorting" tabindex="0" aria-controls="datatable-ajax" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 10px;">Topic</th>
+					<th width="25%" class="sorting" tabindex="0" aria-controls="datatable-ajax" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 20px;">Description</th>
+					<th width="15%" class="sorting" tabindex="0" aria-controls="datatable-ajax" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 10px;">Deadline</th>
+					<th width="15%" class="sorting" tabindex="0" aria-controls="datatable-ajax" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >UploadType</th>
+					<th width="15%" class="sorting" tabindex="0" aria-controls="datatable-ajax" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >PinNo</th>
+					 <th width="25%" class="sorting" tabindex="0" aria-controls="datatable-ajax" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending"	style="width: 20px;">Assignees</th>
 									</tr>
 								</thead>
 								<tbody>

@@ -1,8 +1,9 @@
 package com.xworkz.assignment.controllers.adduser;
 
-
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +20,7 @@ import com.xworkz.assignment.services.signInuser.SignInUserService;
 
 @Controller
 @RequestMapping("/")
-public class LoginUserController{
+public class LoginUserController {
 
 	@Autowired
 	private SignInUserService service;
@@ -30,30 +31,39 @@ public class LoginUserController{
 	}
 
 	@RequestMapping(value = "/signIn", method = RequestMethod.POST)
-	public String signInDetails(@RequestParam String email, @RequestParam String pwd, Model model,HttpServletRequest request)
-			throws ControllerException {
+	public String signInDetails(@RequestParam String email, @RequestParam String pwd, Model model,HttpServletRequest request, HttpServletResponse  response) throws ControllerException {
+		
 		System.out.println("Calling SignIn()..from LoginUSerController()...");
 		System.out.println("Email:" + email + "" + "and Password:" + pwd);
 		SignUpEntity success;
 		try {
 			System.out.println("Comming..........................");
+			
 			success = service.signInDetails(email, pwd);
 
-			if (success != null) 
-			{
-				// create Session here...
-					
-				HttpSession session = request.getSession();//Creating a session
+			if (success != null) {
+
+				// create newSession here...
+
+				HttpSession session = request.getSession(true);// Creating a session
 				session.setAttribute("userEntity", success);
-				request.setAttribute("userName", success.getFname());//setting session attribute
-				session.setMaxInactiveInterval(60*5);//300seconde
+			    //	request.setAttribute("userName", success.getFname());// setting session attribute
+				 //setting session to expire in 5 mins
+				session.setMaxInactiveInterval(60 * 5);// 300seconde
+
 				
+				  Cookie useremail = new Cookie("Email",success.getEmail());
+				  Cookie password = new Cookie("message",success.getPass());
+				  response.addCookie(useremail);
+				  response.addCookie(password);
+				 
+
 				if (success.getStatus() == 1) {
-					System.out.println("SignIn Sucessfully.." + request.getAttribute("userName"));
+					System.out.println("SignIn Sucessfully.." + session.getAttribute(success.getFname()));
 					model.addAttribute("email", email);
 					return EnumUtils.Home.toString();
 				} else if (success.getStatus() == 0) {// first time user
-					System.out.println("Change Your Password " + request.getAttribute("userName"));
+					System.out.println("Change Your Password " + session.getAttribute(success.getFname()));
 					model.addAttribute("email", email);
 					return EnumUtils.ChangeSetting.toString();
 				}
@@ -67,21 +77,19 @@ public class LoginUserController{
 			throw new ControllerException(e.getMessage());
 		}
 		return EnumUtils.SignIn.toString();
-		
-	}
-	
-	@RequestMapping("/signOut")
-	public String logOut(HttpServletRequest request)
-	{
-		System.out.println("invoked SignOut method.....");
-		
-		HttpSession session=request.getSession(false);
 
-        if(session!=null)
-         {
-          session.invalidate();
-          System.out.println("UserName after Session TimeOut:"+request.getAttribute("userName"));
-         }
+	}
+
+	@RequestMapping("/signOut")
+	public String logOut(HttpServletRequest request) {
+		System.out.println("invoked SignOut method.....");
+
+		HttpSession session = request.getSession(false);
+
+		if (session != null) {
+			session.invalidate();
+			System.out.println("UserName after Session TimeOut:" + request.getAttribute("userName"));
+		}
 		return EnumUtils.SignIn.toString();
 	}
 

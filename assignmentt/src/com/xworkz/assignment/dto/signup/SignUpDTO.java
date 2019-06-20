@@ -4,10 +4,11 @@ import java.io.Serializable;
 
 public class SignUpDTO implements Serializable{
 
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 2029884926500769922L;
+	private static final long serialVersionUID = -3308671380455362861L;
 	private String fname;
 	private String lname;
 	private String email;

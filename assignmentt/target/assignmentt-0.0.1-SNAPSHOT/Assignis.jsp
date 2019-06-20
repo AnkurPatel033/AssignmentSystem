@@ -42,10 +42,11 @@
 <!-- Head Libs -->
 <script src="assets/vendor/modernizr/modernizr.js"></script>
 <script src="assets/javascripts/forms/dateTime.js"></script>
+<script src="assets/javascripts/forms/sessionCheck.js"></script>
 
 
 </head>
-<body onload=fetchPinDetails();>
+<body>
 	<section class="body">
 
 		<!-- start: header -->
@@ -135,7 +136,7 @@
 					<div class="col-xs-12">
 						<section class="panel">
 							<header class="panel-heading">
-								<h5>${success}</h5>
+							 <h5 style="color: red;">${success}</h5>
 								<h2 style="align-items: center">Assignee to Assignment</h2>
 							</header>
 							<div class="panel-body">

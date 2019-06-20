@@ -26,6 +26,9 @@ public class AddTopicEntity implements Serializable {
 	@Column(name="TOPIC_NAME")
 	private String topicName;
 
+	@Column(name="COURSE_ID")
+	private String CourseId;
+	
 	public AddTopicEntity() {
 		System.out.println("Created:" + this.getClass().getSimpleName());
 	}
@@ -46,9 +49,17 @@ public class AddTopicEntity implements Serializable {
 		this.topicName = topicName;
 	}
 
+	public String getCourseId() {
+		return CourseId;
+	}
+
+	public void setCourseId(String courseId) {
+		CourseId = courseId;
+	}
+
 	@Override
 	public String toString() {
-		return "AddTopicEntity [topicId=" + topicId + ", topicName=" + topicName + "]";
+		return "AddTopicEntity [topicId=" + topicId + ", topicName=" + topicName +", courseId=" + CourseId+ "]";
 	}
 
 	

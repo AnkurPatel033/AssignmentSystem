@@ -10,28 +10,29 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.xworkz.assignment.dao.signInuser.SignInUserDetailsDAO;
 import com.xworkz.assignment.exceptions.ControllerException;
+import com.xworkz.assignment.services.createassign.CreateAssignmentService;
 
 @RestController
-public class PinLoadController {
+public class CourseLoadController {
 	
 	@Autowired
-	private SignInUserDetailsDAO dao;
+	private CreateAssignmentService service;
 	
-	public PinLoadController() {
+	public CourseLoadController() {
 		System.out.println("Created:"+this.getClass().getSimpleName());
 	}
 	
-	@RequestMapping(value = "/getpin/", method = RequestMethod.GET)
+	@RequestMapping(value = "/getcourse/", method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<List<Object[]>> PinLoad() throws ControllerException, Exception {
-		System.out.println("Calling PinLoadRestController() from RestController...");
+		System.out.println("Calling CourseLoadRestController() from RestController...");
 		
-		List<Object[]> pin=dao.pinLoad();
-		System.out.println("Data  Fetch and receive in Controller:" + pin);
+		List<Object[]> course=service.courseLoad();
+		System.out.println("Data  Fetch and receive in Controller:" + course);
 	//	new ResponseEntity<CreateAssignmentEntity>(HttpStatus.OK);
-		return ResponseEntity.status(HttpStatus.OK).body(pin);
+		return ResponseEntity.status(HttpStatus.OK).body(course);
+		//return null;
 	}
 	
 }

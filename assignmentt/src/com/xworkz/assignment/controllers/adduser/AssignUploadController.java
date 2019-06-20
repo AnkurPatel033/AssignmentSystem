@@ -49,9 +49,7 @@ public class AssignUploadController {
 			System.out.println("File Name:"+fileName);
 			System.out.println("File Address:"+fileUrl);
 			try {
-				
-				
-				
+						
 				service.saveAssignUpload(dto,fileName);
 			} catch (ServiceException e) {
 				// TODO Auto-generated catch block

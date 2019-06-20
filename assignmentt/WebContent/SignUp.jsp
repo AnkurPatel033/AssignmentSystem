@@ -128,7 +128,7 @@ function fetchCountryDetails() {
 				<section class="body-sign">
 
 					<div class="center-sign">
-						<p>${message}</p>
+						<h5 style="color: red;">${message}</h5>
 						<div class="panel panel-sign">
 
 							<div class="panel-body">

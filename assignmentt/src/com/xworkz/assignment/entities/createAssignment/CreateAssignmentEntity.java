@@ -52,13 +52,6 @@ public class CreateAssignmentEntity implements Serializable{
 	      System.out.println("Created:"+this.getClass().getSimpleName());
 	}
 
-	/*public int getaId() {
-		return aId;
-	}
-
-	public void setaId(int aId) {
-		this.aId = aId;
-	}*/
 
 	public String getCourse() {
 		return course;

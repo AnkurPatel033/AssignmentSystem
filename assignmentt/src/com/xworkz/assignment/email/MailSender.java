@@ -62,6 +62,8 @@ public class MailSender {
 
 		System.out.println("invoked mailSending()...");
 		SimpleMailMessage mailMessage = new SimpleMailMessage();
+		
+		
 		for (int i = 0; i < email.length; i++) {
 			try {
 				mailMessage.setTo(email[i]);

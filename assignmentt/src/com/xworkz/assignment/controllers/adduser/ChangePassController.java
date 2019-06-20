@@ -1,5 +1,8 @@
 package com.xworkz.assignment.controllers.adduser;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,8 +26,17 @@ public class ChangePassController {
 	}
 
 	@RequestMapping(value = "/ChangeSetting", method = RequestMethod.POST)
-	public String changePassDetails(@RequestParam String npass,@RequestParam String email, Model model)
+	public String changePassDetails(@RequestParam String npass,@RequestParam String email,HttpServletRequest request, Model model)
 			throws ControllerException {
+		
+
+		HttpSession oldSession = request.getSession(false);
+
+		System.out.println("User:" + oldSession.getAttribute("userEntity"));
+
+		if (oldSession.getAttribute("userEntity") != null) {
+		
+		
 		System.out.println("invoked changePassDetails()...");
 		model.addAttribute("email",email);//do comming from Session
         
@@ -33,9 +45,17 @@ public class ChangePassController {
 			service.changePassDetails(npass,email);
 			model.addAttribute("message", "Sucessfully Password Changed..");
 			return EnumUtils.ChangeSetting.toString();
+		
 		} catch (ServiceException e) {
 			System.out.println("From Controller:" + e.getMessage());
 			throw new ControllerException(e.getMessage());
+		}
+		}
+		else
+		{
+			System.out.println("Session TimeOut:SignIn Again...");
+			model.addAttribute("SessionMsg", "SignIn First!!!");
+			return EnumUtils.SignIn.toString();
 		}
 
 		
