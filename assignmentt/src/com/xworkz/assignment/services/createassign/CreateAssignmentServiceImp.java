@@ -54,7 +54,6 @@ public class CreateAssignmentServiceImp implements CreateAssignmentService {
 			throw new ServiceException(e.getMessage());
 		}
 		return pin;
-
 	}
 
 	@Override

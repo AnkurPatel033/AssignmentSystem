@@ -22,13 +22,14 @@ public class CheckSessionController {
 	public boolean CheckSessionValidOrNot(HttpServletRequest request) throws ServletException, IOException {
 		System.out.println("Calling CheckSessionValidOrNot()  from RestController...");
 
-		HttpSession session = request.getSession(false);
+				
+		HttpSession oldSession = request.getSession(false);
 
-		System.out.println("User:" + session.getAttribute("UserEntity"));
-
+		System.out.println("User:" + oldSession.getAttribute("userEntity"));
+		
 		
 		boolean sess=false;
-		if (session.getAttribute("UserEntity") == null)
+		if (oldSession.getAttribute("UserEntity") == null)
 		{
 	      sess=true;
 		}

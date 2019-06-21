@@ -3,7 +3,16 @@
  */
 
 function sessionCheck()
-{	var url = "http://localhost:8071/assignmentt/checkSession/";
+{	
+	 alert("Invalid data");
+	 
+	 var ss='<%= Session["userEntity"] %>';
+	/* var user=${sessionScope.userEntity.fname};
+	alert(user);*/
+	 alert(ss);
+	
+	/*
+	var url = "http://localhost:8071/assignmentt/checkSession/";
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.onreadystatechange = function() {
 		if (xmlHttp.readyState == 4) {
@@ -11,8 +20,9 @@ function sessionCheck()
 				var jsonData = JSON.parse(xmlHttp.responseText);
                  var i=true;
 				 if (i==jsonData) {
-				        window.location = "SignIn.jsp";
+				        window.location = "Search.jsp";
 				    }
+				
 
 			} else if (xmlHttp.status == 404) {
 				alert("Invalid data");
@@ -20,6 +30,6 @@ function sessionCheck()
 		}
 	}
 	xmlHttp.open("GET", url, true);
-	xmlHttp.send();
+	xmlHttp.send();*/
 	
 }
