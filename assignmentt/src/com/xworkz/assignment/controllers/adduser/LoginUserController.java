@@ -47,9 +47,12 @@ public class LoginUserController {
 
 				HttpSession session = request.getSession(true);// Creating a session
 				session.setAttribute("userEntity", success);
+				System.out.println("Return Session Entity is:"+success);
+				
+				System.out.println("Set Session Attribute is:"+session.getId());
 			    //	request.setAttribute("userName", success.getFname());// setting session attribute
 				 //setting session to expire in 5 mins
-				session.setMaxInactiveInterval(60 * 5);// 300seconde
+				session.setMaxInactiveInterval(60);// 300second
 
 				
 				  Cookie useremail = new Cookie("Email",success.getEmail());

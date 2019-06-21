@@ -40,7 +40,7 @@
 		
 
 	</head>
-	<body onload="fetchCourseDetails();">
+	<body onload="fetchCourseDetails();sessionCheck();">
 		<section class="body">
 
 		<!-- start: header -->

@@ -46,7 +46,7 @@
 
 
 </head>
-<body>
+<body onload=sessionCheck();>
 	<section class="body">
 
 		<!-- start: header -->

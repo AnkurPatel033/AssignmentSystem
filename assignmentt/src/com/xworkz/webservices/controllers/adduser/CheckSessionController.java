@@ -29,7 +29,7 @@ public class CheckSessionController {
 		
 		
 		boolean sess=false;
-		if (oldSession.getAttribute("UserEntity") == null)
+		if (oldSession.getAttribute("userEntity")!= null)
 		{
 	      sess=true;
 		}

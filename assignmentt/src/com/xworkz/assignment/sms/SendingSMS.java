@@ -1,36 +1,48 @@
 package com.xworkz.assignment.sms;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 
+import org.springframework.stereotype.Service;
+import java.util.Random;
+@Service
 public class SendingSMS {
-	
-	
-	public String sendPin()
-	{
-	 try {
-         URL url = new URL("https://smsapi.engineeringtgr.com/send/?Mobile=9737514349&Password=xxxxxx&Message=test&To=xxxxxxxxxx&Key=xxxxxxxxxxxxxx");
-         URLConnection urlcon = url.openConnection();
-         InputStream stream = urlcon.getInputStream();
-         int i;
-         String response="";
-         while ((i = stream.read()) != -1)
-         {
-             response+=(char)i;
-         }
-         if(response.contains("success")){
-             System.out.println("Successfully send SMS");
-             //your code when message send success
-         }else{
-             System.out.println(response);
-             //your code when message not send
-         }
-     } catch (IOException e)
-	 {
-         System.out.println(e.getMessage());
-     }
-	return null;
+	public String sending() {
+		System.out.println("invoked SMS Application..");
+		try {
+			// Construct data
+			String apiKey = "apikey=" + "GidHDwFlt0A-iRLWMOFiDa7poDz5ccuWZaxs6bSWvi";
+			
+			Random rand=new Random(9999);
+			
+			long OTP=rand.nextInt();
+			
+			String message = "&message=" + "Hey Ankur Your OTP:"+OTP;
+			String sender = "&sender=" + "X-workz_AMS";
+			String numbers = "&numbers=" + "919737514379";
+			
+			// Send data
+			HttpURLConnection conn = (HttpURLConnection) new URL("https://api.textlocal.in/send/?").openConnection();
+			String data = apiKey + numbers + message + sender;
+			conn.setDoOutput(true);
+			conn.setRequestMethod("POST");
+			conn.setRequestProperty("Content-Length", Integer.toString(data.length()));
+			conn.getOutputStream().write(data.getBytes("UTF-8"));
+			final BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			final StringBuffer stringBuffer = new StringBuffer();
+			String line;
+			while ((line = rd.readLine()) != null) {
+				stringBuffer.append(line);
+			}
+			rd.close();
+			System.out.println("OTP send sucessfully..");
+			return stringBuffer.toString();
+		} catch (Exception e) {
+			System.out.println("Error SMS "+e);
+			return "Error "+e;
+		}
 	}
 }
+	

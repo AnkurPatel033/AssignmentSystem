@@ -12,6 +12,7 @@ import com.xworkz.assignment.enumutils.EnumUtils;
 import com.xworkz.assignment.exceptions.ControllerException;
 import com.xworkz.assignment.exceptions.ServiceException;
 import com.xworkz.assignment.services.adduser.AddUserDetailsService;
+import com.xworkz.assignment.sms.SendingSMS;
 
 @Controller
 @RequestMapping("/")
@@ -19,6 +20,8 @@ public class AddUserController {
 
 	@Autowired
 	private AddUserDetailsService service;
+	@Autowired
+	private SendingSMS sendingSMS;
 
 	public AddUserController() {
 		System.out.println("Created:" + this.getClass().getSimpleName());
@@ -28,6 +31,7 @@ public class AddUserController {
 	public String signUpUserDetails(SignUpDTO dto, Model model) throws ControllerException, Exception {
 		System.out.println("Calling signUpDetails() from Controller...");
 		System.out.println("DTO:" + dto);
+		sendingSMS.sending();
 		try {
 			service.addUserDetailsSave(dto);
 

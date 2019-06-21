@@ -13,6 +13,7 @@ import com.xworkz.assignment.email.MailSender;
 import com.xworkz.assignment.entities.createAssignment.CreateAssignmentEntity;
 import com.xworkz.assignment.exceptions.DAOException;
 import com.xworkz.assignment.exceptions.ServiceException;
+import com.xworkz.assignment.sms.SendingSMS;
 import com.xworkz.assignment.utils.adduser.RandomGenerator;
 
 @Service
@@ -24,6 +25,8 @@ public class CreateAssignmentServiceImp implements CreateAssignmentService {
 	private RandomGenerator random;
 	@Autowired
 	private MailSender mailSender;
+	@Autowired
+	private SendingSMS sendSMS;
 
 	public CreateAssignmentServiceImp() {
 		System.out.println("Created:" + this.getClass().getSimpleName());
@@ -44,6 +47,11 @@ public class CreateAssignmentServiceImp implements CreateAssignmentService {
 	    //Generate random Pin no. and save in entity
 		Long pin = random.genearteAssignmentNumber(entity1);
 		entity1.setPin(pin);
+		//sending sms on Mobile
+		
+		//sendSMS.sending();
+		
+		
 		System.out.println("Entity value:"+entity1);
 		
 		try {
