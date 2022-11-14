@@ -8,7 +8,7 @@
 	<packaging>war</packaging>
 
 	<properties>
-		<spring.lib.version>4.2.2.RELEASE</spring.lib.version>
+		<spring.lib.version>4.2.7.RELEASE</spring.lib.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
